@@ -1,0 +1,45 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+
+
+# Map display Book list
++nocsrf
+GET    /api/displayBooks              controllers.BookController.displayBook
+
+#Map Add book
+POST  /api/addBooks                   controllers.BookController.addBooks
+
+POST  /api/borrowItem               controllers.BookController.borrowItem
+
+POST  /api/addReaders               controllers.BookController.addReaders
+
+POST  /api/returnItem               controllers.BookController.returnItem
+
+GET  /api/displayBorrowedItems              controllers.BookController.getBorowedItems
+
+# Map display DVD list
++nocsrf
+GET    /api/displayDVD                controllers.DVDController.displayDVD
+
+#Map Add DVD
+POST  /api/addDVD                     controllers.DVDController.addDVD
+
+POST   /api/delete                  controllers.DVDController.delete
+
+#Map Delete Book
+#GET    /api/deleteBook                controllers.BookController.deleteBook
+
+#Map Delete DVD
+#GET    /api/deleteDVD                controllers.DVDController.deleteDVD
+
+#Map Show Book
+#POST   /api/showBook                controllers.BookController.showBook
+
+#Map Show DVD
+#POST    /api/showDVD                controllers.DVDController.showDVD
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

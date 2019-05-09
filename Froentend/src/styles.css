@@ -1,0 +1,204 @@
+/* Master Styles */
+h1 {
+    color: #4d0066; 
+    font-family: Arial, Helvetica, sans-serif;   
+    font-size: 250%;
+  }
+  h2, h3 { 
+    color: #2e2e1f;
+    font-family: Arial, Helvetica, sans-serif;   
+    font-weight: lighter;
+  }
+  body { 
+    margin: 2em;
+    background-color: #999966;
+  }
+  body, input[text], button { 
+    color: #000000; 
+    font-family: Cambria, Georgia; 
+  }
+  a {
+    cursor: pointer;
+    cursor: hand;
+  }
+  button {
+    font-family: Arial;
+    text-decoration: none;
+    background-color: #eee;
+    border: none;
+    padding: 10px 28px;
+    border-radius: 10px;
+    cursor: pointer;
+    cursor: hand;
+  }
+  button:hover {
+    background-color: #cfd8dc;
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #aaa; 
+    cursor: auto;
+  }
+
+  
+  
+  /* Navigation link styles */
+  nav a {
+    padding: 10px 27px;
+    font-size: 14pt;
+    text-decoration: none;
+    margin-top: 13px;
+    margin-bottom: 15px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 10px;
+  }
+  nav a:visited, a:link {
+    color: #607D8B;
+  }
+  nav a:hover {
+    color: #039be5;
+    background-color: #CFD8DC;
+  }
+  nav a.active {
+    color: #039be5;
+  }
+  
+
+  /* items class */
+  .items {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding-left: 0;
+    width: 13em;
+  }
+
+  .items li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em;
+    height: 1.6em;
+    border-radius: 4px;
+  }
+  .items li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+  }
+  .items li.selected:hover {
+    background-color: #BBD8DC;
+    color: white;
+  }
+  
+  .items .text {
+    position: relative;
+    top: -3px;
+  }
+  
+  .items li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em;
+    height: 1.6em;
+    border-radius: 4px;
+  }
+  
+  .items .badge {
+    display: inline-block;
+    font-size: small;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #607D8B;
+    line-height: 1em;
+    position: relative;
+    left: -1px;
+    top: -4px;
+    height: 1.8em;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+  }
+  .items li.selected {
+    background-color: #CFD8DC;
+    color: white;
+  }
+  /* everywhere else */
+  * { 
+    font-family: Arial, Helvetica, sans-serif; 
+  }
+
+  /*to style form*/
+
+
+  /* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 35%;
+  padding: 10px 55px;
+  height: 10px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.con:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+     /*to style text area of the form*/ 
+    input[type=text] {
+    background-color: #d6d6c2;  
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b8b894;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 1px;
+    margin-bottom: 11px;
+    resize: vertical;
+}
+
+    input[type=email] {
+      background-color: #d6d6c2;    
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #b8b894;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 1px;
+    margin-bottom: 11px;
+    resize: vertical;
+}
+
+     /*to style buttons of the form*/ 
+     
+   input[type=reset]{
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    cursor: hand;
+    margin-bottom: 25px;
+    }
+
+
+    input[type=reset]:hover {
+      color: #039be5;
+      background-color: #DDD;
+      left: .1em;
+    }
+
+    input[type=reset]:disabled {
+      background-color: #eee;
+      color: #aaa; 
+      cursor: auto;
+    }
+
+   
