@@ -1,0 +1,218 @@
+package LibraryManagementSystem;
+
+public class Book {
+    private String bookName;      // declare variables
+    private String authorName;
+    private String publisher;
+    private int numberOfPages;
+
+    public Book(String bookName, String authorName, String publisher, int numberOfPages) {  // creating constructor for declared variables
+        this.bookName = bookName;
+        this.authorName = authorName;
+        this.publisher = publisher;
+        this.numberOfPages = numberOfPages;
+    }
+
+    public void displayItems() {         // create method for display book list
+
+        //Traversing list
+            System.out.println(bookName + "             " + authorName + "                 " + publisher + "          " + numberOfPages);
+
+        }
+
+
+    }
+
+
+package LibraryManagementSystem;
+
+public class DVD {
+
+    private String nameOfTheFilm;     // declare variables
+    private String languages;
+    private String subtitles;
+    private String nameOfTheProducer;
+    private String actors;
+
+    // creating constructor for declared variables
+    public DVD(String nameOfTheFilm, String languages, String subtitles, String nameOfTheProducer, String actors) {
+        this.nameOfTheFilm = nameOfTheFilm;
+        this.languages = languages;
+        this.subtitles = subtitles;
+        this.nameOfTheProducer = nameOfTheProducer;
+        this.actors = actors;
+    }
+
+    public void displayDVDItems() {// create method for display DVD list
+
+            //Traversing list
+                System.out.println(nameOfTheFilm + "             " + languages + "                 " + subtitles + "          " + nameOfTheProducer + "      " + actors);
+
+
+            }
+        }
+
+
+
+package LibraryManagementSystem;
+
+import java.util.Scanner;
+
+public class Reader extends LibraryItem {
+
+    // initialize the Scanner
+    Scanner sc = new Scanner(System.in);
+
+    private int ID;                 // declare variables
+    private String name;
+    private int mobileNO;
+    private String emailAddress;
+
+    public Reader() {       // creating constructor for declared variables
+        this.ID = ID;
+        this.name = name;
+        this.mobileNO = mobileNO;
+        this.emailAddress = emailAddress;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getMobileNO() {
+        return mobileNO;
+    }
+
+    public void setMobileNO(int mobileNO) {
+        this.mobileNO = mobileNO;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public void details(){  // calling methord for get user details
+        System.out.print("Enter Your Name :");
+        name = sc.next();
+        System.out.print("Enter Your ID :");
+        ID = sc.nextInt();
+        System.out.print("Enter Your Mobile Number :");
+        mobileNO = sc.nextInt();
+        System.out.print("Enter Your Email Address :");
+        emailAddress = sc.next();
+        System.out.println("\n Welcome!! "+name+ " Select Book From Here :");
+    }
+
+      public void print_details(){
+
+      }
+}
+
+
+package LibraryManagementSystem;
+
+import java.util.Date;
+
+public abstract class LibraryItem {
+
+    int ISBN;               // declare variables
+    String title;
+    String sector;
+    Date dateOfPublished;
+    Date dateOfBorrowed;
+    String currentReader;
+
+
+    public abstract void details();
+}
+
+
+package LibraryManagementSystem;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Test {
+    public static void main(String[] args) {
+
+        // initialize the Scanner
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("-----------------------------");
+        System.out.println(" Welcome To Public Library ");
+        System.out.println("------------------------------");
+
+        LibraryItem obj1 = new Reader(); // create object from Reader class
+        obj1.details();
+
+        System.out.println("\n------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("Book Name                                     Author Name                               Publisher              Num Of Pages");
+        System.out.println("------------------------------------------------------------------------------------------------------------------------------");
+
+        //Creating list of Books
+        ArrayList<Book> BookList = new ArrayList<Book>();
+
+        //Creating Books
+        Book item1 = new Book("Head First Java", "                  Kathy Sierra & Bert Bates", "ABC Publishers", 2545);   // create Array List to store details of books
+        item1.displayItems();
+        Book item2 = new Book("Big Java", "                         Cay S. Horstmann", "         DEF Publishers", 4545);   // create Array List to store details of books
+        item2.displayItems();
+        Book item3 = new Book("Introduction To Java Programming ", "Y. Daniel Liang", "          GFR Publishers", 1245);   // create Array List to store details of books
+        item3.displayItems();
+        Book item4 = new Book("Head First Design Patten", "         Eric Freeman", "             AKC Publishers", 2555);   // create Array List to store details of books
+        item4.displayItems();
+        Book item5 = new Book("Thinking in Java", "                 Bruce Eckel", "              VKC Publishers", 2695);   // create Array List to store details of books
+        item5.displayItems();
+
+        boolean go = true;
+        while (go) {
+
+            System.out.print("\nDo you want to View the List Of DVDs ? (0 - No / 1 - Yes) : ");   // asking from user wants view the list of DVDs
+
+            int goValue = sc.nextInt();
+
+            if (goValue == 0) {
+                go = false;
+                System.out.println("Thank You For Join With Us!!");
+                System.exit(0);
+            } else if (goValue == 1) {
+                go = true;
+
+                System.out.println("\n------------------------------------------------------------------------------------------------------------------------------------------------");
+                System.out.println("Film                     Languages               Subtitles                Producer              Actors");
+                System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------");
+
+                //Creating list of DVDs
+                ArrayList<DVD> DVDList = new ArrayList<DVD>();
+
+                DVD dvd1 = new DVD("The Nun", "      English", "English/Korean", " Corin Hardy", "     Demián Bichir,Taissa Farmi,Jonas Bloquet,Bonnie Aarons"); // create Array List to store details of DVDs
+                dvd1.displayDVDItems();
+                DVD dvd2 = new DVD("Baaghi 2", "     Hindi", "  English/Sinhala", "Sajid Nadiadwala", "Tiger Shroff, Ronny Singh,Neha Salgaonkar ,Randeep Hooda"); // create Array List to store details of DVDs
+                dvd2.displayDVDItems();
+                DVD dvd3 = new DVD("Annabelle", "    English", "English/Korean", " James Wan", "       Annabelle Wallis,Mia,Ward Horton,Kerry O'Malley"); // create Array List to store details of DVDs
+                dvd3.displayDVDItems();
+                DVD dvd4 = new DVD("Jurassic Park", "English", "English/Korean", " Kathleen Kennedy", "Sam Neill,Jeff Goldblum, Laura Dern,Richard Attenborough"); // create Array List to store details of DVDs
+                dvd4.displayDVDItems();
+                DVD dvd5 = new DVD("Venom", "        English", "English/Korean", " Avi Arad", "        Tom Hardy, Michelle Williams, Anne Weying,Scott Haze"); // create Array List to store details of DVDs
+                dvd5.displayDVDItems();
+            }
+        }
+    }
+
+}
